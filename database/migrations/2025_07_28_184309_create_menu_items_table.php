@@ -15,9 +15,9 @@ return new class extends Migration
         Schema::create('menu_items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->int('priceSm')->nullable();
-            $table->int('priceMd')->nullable();
-            $table->int('priceLg')->nullable();
+            $table->integer('priceSm')->nullable();
+            $table->integer('priceMd')->nullable();
+            $table->integer('priceLg')->nullable();
             $table->string('img_url')->nullable();
             $table->foreignIdFor(MenuCategory::class);
             $table->timestamps();
