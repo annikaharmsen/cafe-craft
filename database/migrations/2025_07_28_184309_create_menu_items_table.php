@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Image;
 use App\Models\MenuCategory;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,7 +19,7 @@ return new class extends Migration
             $table->integer('price_sm')->nullable();
             $table->integer('price_md')->nullable();
             $table->integer('price_lg')->nullable();
-            $table->string('img_url')->nullable();
+            $table->foreignIdFor(Image::class)->nullable();
             $table->foreignIdFor(MenuCategory::class);
             $table->timestamps();
         });
