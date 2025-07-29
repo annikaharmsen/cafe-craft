@@ -1,4 +1,4 @@
-export default function menu() {
+export default function Menu() {
     return (
         <div>
             <h1 className="text-4xl">Menu</h1>
