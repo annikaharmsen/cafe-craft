@@ -1,7 +1,16 @@
+import { Card } from '@/components/ui/card';
+import WebLayout from '@/layouts/web-layout';
+
 export default function Home() {
     return (
-        <div>
-            <h1 className="text-4xl">Welcome to Café Craft</h1>
-        </div>
+        <WebLayout>
+            <Card>
+                <h1 className="text-center text-4xl">
+                    Welcome to
+                    <br />
+                    Café Craft
+                </h1>
+            </Card>
+        </WebLayout>
     );
 }
