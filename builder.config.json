@@ -1,0 +1,6 @@
+{
+  "command": "composer run dev",
+  "serverUrl": "http://cafe-craft.builder.test",
+  "authenticateProxy": false,
+  "commitMode": "commits"
+}
