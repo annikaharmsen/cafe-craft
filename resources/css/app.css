@@ -71,7 +71,7 @@
     --popover-foreground: oklch(0.279 0.077 45.635);
 
     /* Brand primaries */
-    --primary: oklch(0.3579 0.0812 46.9824); /* #4B3C32 */
+    --primary: oklch(35.787% 0.08115 46.967); /* #4B3C32 */
     --primary-foreground: oklch(0.985 0.001 106.423);
 
     --secondary: oklch(0.372 0.044 257.287); /* #E1C6A4 */
@@ -108,7 +108,8 @@
     --sidebar-border: oklch(0.985 0.001 106.423);
     --sidebar-ring: oklch(0.985 0.001 106.423);
 
-    --radius: 1.5rem;
+    --radius: 0;
+    /* --radius: 1.25rem; */
 
     --font-sans: Nunito Sans, ui-sans-serif, sans-serif, system-ui;
 
