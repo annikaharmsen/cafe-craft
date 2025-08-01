@@ -1,3 +1,4 @@
+import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
 
 export default function WebLayout({
@@ -16,6 +17,7 @@ export default function WebLayout({
             <div className="mx-auto max-w-301">
                 <Navigation minOpacity={navMinOpacity} maxOpacity={navMaxOpacity} threshold={navOpacityThreshold} />
                 <div className="mx-auto flex h-full max-w-300 flex-col">{children}</div>
+                <Footer />
             </div>
         </div>
     );
