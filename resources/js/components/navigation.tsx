@@ -2,40 +2,47 @@ import { Link } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from './ui/navigation-menu';
 
-export default function Navigation() {
-    const [opacity, setOpacity] = useState(0.6);
+export default function Navigation({ minOpacity = 1, maxOpacity = 1, threshold = 300 }) {
+    const [opacity, setOpacity] = useState(minOpacity);
 
     const handleScroll = () => {
-        const current = window.pageYOffset + 360;
-        const threshold = 600;
+        const current = window.pageYOffset;
+        const offset = minOpacity * (threshold - current);
         // Calculate opacity as a decimal between 0 and 1
-        const calculatedOpacity = Math.min(current / threshold, 0.99);
+        const calculatedOpacity = Math.min((current + offset) / threshold, maxOpacity);
         setOpacity(calculatedOpacity);
+        console.log(opacity);
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        if (minOpacity !== maxOpacity) {
+            window.addEventListener('scroll', handleScroll);
+            return () => window.removeEventListener('scroll', handleScroll);
+        }
     }, []);
+
+    const menuLinkClasses = 'rounded-4xl';
 
     return (
         <NavigationMenu
-            className="py-auto sticky top-0 z-50 mx-auto flex h-20 max-w-screen min-w-max justify-between gap-12 px-12 shadow-md transition-all transition-none duration-300"
+            className="py-auto sticky -top-0 z-50 mx-auto flex h-20 w-full max-w-screen justify-between gap-4 px-8 lg:gap-12 lg:px-12"
             style={{
                 backgroundColor: `oklch(from var(--background) l c h / ${opacity})`,
+                boxShadow: `0 2px 2px -2px var(--shadow-color)`,
+                transition: 'none',
             }}
         >
             <Link href={route('home')}>
-                <span className="text-xl text-primary">Café Craft</span>
+                <span className="text-xl font-bold text-primary">Café Craft</span>
             </Link>
             <NavigationMenuList className="gap-4">
                 <NavigationMenuItem>
-                    <NavigationMenuLink asChild data-active={route().current('home')}>
+                    <NavigationMenuLink asChild data-active={route().current('home')} className={menuLinkClasses}>
                         <Link href={route('home')}>Home</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink asChild data-active={route().current('menu')}>
+                    <NavigationMenuLink asChild data-active={route().current('menu')} className={menuLinkClasses}>
                         <Link href={route('menu')}>Menu</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
