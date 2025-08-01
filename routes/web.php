@@ -26,10 +26,5 @@ Route::get('/menu', function () {
     ]);
 })->name('menu');
 
-Route::resource('images', controller: ImageController::class);
-Route::resource('menu-categories', controller: MenuCategoryController::class);
-Route::resource('menu-items', controller: MenuItemController::class);
-Route::resource('posts', controller: PostController::class);
-
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
