@@ -11,4 +11,12 @@ class MenuCategory extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'image_id', 'index'];
+
+    public function image() {
+        return $this->belongsTo(Image::class);
+    }
+
+    public function items() {
+        return $this->hasMany(MenuItem::class);
+    }
 }

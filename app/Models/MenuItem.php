@@ -11,4 +11,12 @@ class MenuItem extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'price_sm', 'price_md', 'price_lg', 'image_id', 'menu_category_id'];
+
+    public function image() {
+        return $this->belongsTo(Image::class);
+    }
+
+    public function category() {
+        return $this->belongsTo(MenuCategory::class);
+    }
 }
