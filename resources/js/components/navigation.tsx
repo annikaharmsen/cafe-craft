@@ -32,8 +32,9 @@ export default function Navigation({ minOpacity = 1, maxOpacity = 1, threshold =
                 transition: 'none',
             }}
         >
-            <Link href={route('home')}>
-                <span className="text-xl font-bold text-primary">Café Craft</span>
+            <Link href={route('home')} className="flex items-center gap-4">
+                <img src="/logo.svg" />
+                <span className="hidden text-2xl font-bold text-primary sm:inline">Café Craft</span>
             </Link>
             <NavigationMenuList className="gap-4">
                 <NavigationMenuItem>
