@@ -19,7 +19,7 @@ export default function Navigation({ minOpacity = 1, maxOpacity = 1, threshold =
             window.addEventListener('scroll', handleScroll);
             return () => window.removeEventListener('scroll', handleScroll);
         }
-    }, []);
+    });
 
     const menuLinkClasses = 'rounded-4xl';
 
