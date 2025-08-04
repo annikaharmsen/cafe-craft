@@ -1,9 +1,5 @@
 <?php
 
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\MenuCategoryController;
-use App\Http\Controllers\MenuItemController;
-use App\Http\Controllers\PostController;
 use App\Models\MenuCategory;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;

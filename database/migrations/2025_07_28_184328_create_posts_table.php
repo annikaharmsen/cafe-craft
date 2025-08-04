@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
-            $table->integer('index');
+            $table->integer('index')->nullable();
             $table->foreignIdFor(Image::class)->nullable();
             $table->timestamps();
         });

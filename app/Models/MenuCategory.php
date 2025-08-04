@@ -17,6 +17,6 @@ class MenuCategory extends Model
     }
 
     public function items() {
-        return $this->hasMany(MenuItem::class);
+        return $this->hasMany(MenuItem::class)->orderBy('index');
     }
 }

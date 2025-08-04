@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Models;
 
 use App\Models\MenuItem;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -13,6 +13,10 @@ class MenuItemSeeder extends Seeder
      */
     public function run(): void
     {
-        MenuItem::factory()->count(30)->create();
+        $index = 0;
+        MenuItem::factory()->count(30)->create()->each(function ($post) use (&$index) {
+            $post->index = $index++;
+            $post->save();
+        });
     }
 }

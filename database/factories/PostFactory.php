@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Image;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +19,11 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(),
-            'body' => fake()->paragraph(),
-            'index' => 0
+            'title' => Str::title( fake()->words(3, true) ),
+            'body' => fake()->paragraph(4, true),
+            'image_id' => Image::exists()
+                ? Image::inRandomOrder()->first()->id
+                : null
         ];
     }
 }

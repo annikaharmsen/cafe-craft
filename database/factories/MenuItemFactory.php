@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use App\Models\MenuCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,10 +19,11 @@ class MenuItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->word,
-            'price_sm' => fake()->numberBetween(2000, 1000),
-            'price_md' => fake()->numberBetween(3000, 1100),
-            'price_lg' => fake()->numberBetween(4000, 1200),'menu_category_id' => MenuCategory::exists()
+            'name' => Str::title( fake()->words(2, true) ),
+            'price_sm' => fake()->numberBetween(200, 1000),
+            'price_md' => fake()->numberBetween(300, 1100),
+            'price_lg' => fake()->numberBetween(400, 1200),
+            'menu_category_id' => MenuCategory::exists()
                 ? MenuCategory::inRandomOrder()->first()->id
                 : MenuCategory::factory()->create()->id
         ];

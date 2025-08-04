@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('menu_items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('index')->nullable();
             $table->integer('price_sm')->nullable();
             $table->integer('price_md')->nullable();
             $table->integer('price_lg')->nullable();

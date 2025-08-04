@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +18,7 @@ class MenuCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->words(2, true),
-            'index' => 0
+            'title' => Str::title( fake()->words(2, true) )
         ];
     }
 }
