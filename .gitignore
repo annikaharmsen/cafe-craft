@@ -7,9 +7,12 @@
 /storage/*.key
 /storage/pail
 /vendor
+/vscode
 .env
+.env.local
 .env.backup
 .env.production
+.ftpignore
 .phpactor.json
 .phpunit.result.cache
 Homestead.json
