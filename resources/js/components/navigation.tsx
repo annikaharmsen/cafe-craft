@@ -11,7 +11,6 @@ export default function Navigation({ minOpacity = 1, maxOpacity = 1, threshold =
         // Calculate opacity as a decimal between 0 and 1
         const calculatedOpacity = Math.min((current + offset) / threshold, maxOpacity);
         setOpacity(calculatedOpacity);
-        console.log(opacity);
     };
 
     useEffect(() => {
