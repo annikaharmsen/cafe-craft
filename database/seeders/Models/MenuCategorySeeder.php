@@ -3,7 +3,6 @@
 namespace Database\Seeders\Models;
 
 use App\Models\MenuCategory;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class MenuCategorySeeder extends Seeder

@@ -2,7 +2,6 @@
 namespace Database\Seeders\Models;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class ImageSeeder extends Seeder
 {
@@ -19,7 +18,7 @@ class ImageSeeder extends Seeder
          *
          */
 
-        
+
         $newData0 = \App\Models\Image::create([
             'id' => 1,
             'url' => '/storage/media/coffee-5495609_1280.jpg',
