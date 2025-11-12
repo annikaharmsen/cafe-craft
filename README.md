@@ -7,6 +7,7 @@ A full-stack cafe and roastery website built with Laravel and React, featuring a
 **Live Site:** https://cafe-craft.annikaharmsen.com
 
 **Screenshots:**
+
 <img alt="screenshot of home page" src="cafe-craft.annikaharmsen.com.png" height="1000" />
 <img alt="screenshot of menu page" src="cafe-craft.annikaharmsen.com_menu.png" height="1000" />
 
